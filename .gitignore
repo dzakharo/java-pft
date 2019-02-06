@@ -21,3 +21,13 @@ sandbox/build/scripts/sandbox.bat
 sandbox/build/tmp/jar/MANIFEST.MF
 .idea/.idea/workspace.xml
 .idea/workspace.xml
+sandbox/.idea/compiler.xml
+sandbox/.idea/encodings.xml
+sandbox/.idea/gradle.xml
+sandbox/.idea/misc.xml
+sandbox/.idea/modules.xml
+sandbox/.idea/modules/sandbox.main.iml
+sandbox/.idea/modules/sandbox.test.iml
+sandbox/.idea/workspace.xml
+sandbox/out/production/classes/ru/stqa/pft/sandbox/MyFirstProgram.class
+sandbox/sandbox.iml
