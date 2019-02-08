@@ -31,3 +31,7 @@ sandbox/.idea/modules/sandbox.test.iml
 sandbox/.idea/workspace.xml
 sandbox/out/production/classes/ru/stqa/pft/sandbox/MyFirstProgram.class
 sandbox/sandbox.iml
+sandbox/out/production/classes/ru/stqa/pft/sandbox/Square.class
+sandbox/out/production/classes/ru/stqa/pft/sandbox/Distance.class
+sandbox/out/production/classes/ru/stqa/pft/sandbox/Point.class
+sandbox/out/production/classes/ru/stqa/pft/sandbox/Rectangle.class
