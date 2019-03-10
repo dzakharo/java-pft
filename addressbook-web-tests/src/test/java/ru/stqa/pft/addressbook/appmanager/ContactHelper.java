@@ -30,4 +30,23 @@ public class ContactHelper extends HelperBase {
     click(By.id("content"));
   }
 
+  public void selectContact() {
+    click(By.name("selected[]"));
+  }
+
+  public void deleteSelectedContact() {
+    click(By.xpath("//input[@value='Delete']"));
+  }
+
+  public void confirmDeletion() {
+    wd.switchTo().alert().accept();
+  }
+
+  public void editContact() {
+    click(By.xpath("//img[@alt='Edit']"));
+  }
+
+  public void submitContectMofification() {
+    click(By.xpath("//input[@name='update']"));
+  }
 }
