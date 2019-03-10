@@ -14,6 +14,7 @@ public class ApplicationManager {
   private  SessionHelper sessionHelper;
   private  NavigationHelper navigationHelper;
   private  GroupHelper groupHelper;
+  private  ContactHelper contactHelper;
 
   public void init() {
     wd = new FirefoxDriver();
@@ -22,41 +23,8 @@ public class ApplicationManager {
     sessionHelper = new SessionHelper(wd);
     groupHelper = new GroupHelper(wd);
     navigationHelper = new NavigationHelper(wd);
+    contactHelper = new ContactHelper(wd);
     sessionHelper.login("admin", "secret");
-  }
-
-
-
-  public void returnToContacts() {
-    wd.findElement(By.id("content")).click();
-  }
-
-  public void fillContactForm(ContactData contactData) {
-    wd.findElement(By.name("firstname")).click();
-    wd.findElement(By.name("firstname")).clear();
-    wd.findElement(By.name("firstname")).sendKeys(contactData.getFirstname());
-    wd.findElement(By.name("middlename")).click();
-    wd.findElement(By.name("middlename")).clear();
-    wd.findElement(By.name("middlename")).sendKeys(contactData.getMiddlename());
-    wd.findElement(By.name("lastname")).click();
-    wd.findElement(By.name("lastname")).clear();
-    wd.findElement(By.name("lastname")).sendKeys(contactData.getLastname());
-    wd.findElement(By.name("home")).click();
-    wd.findElement(By.name("mobile")).click();
-    wd.findElement(By.name("mobile")).clear();
-    wd.findElement(By.name("mobile")).sendKeys(contactData.getMobile());
-    wd.findElement(By.name("email")).click();
-    wd.findElement(By.name("email")).clear();
-    wd.findElement(By.name("email")).sendKeys(contactData.getEmail());
-
-  }
-
-  public void submitContactCreation() {
-    wd.findElement(By.xpath("(//input[@name='submit'])[2]")).click();
-  }
-
-  public void initContactCreation() {
-    wd.findElement(By.linkText("add new")).click();
   }
 
   public void stop() {
@@ -85,6 +53,11 @@ public class ApplicationManager {
   public GroupHelper getGroupHelper() {
     return groupHelper;
   }
+
+  public ContactHelper getContactHelper() {
+    return contactHelper;
+  }
+
 
   public NavigationHelper getNavigationHelper() {
     return navigationHelper;
