@@ -3,9 +3,14 @@ package ru.stqa.pft.addressbook.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
+import ru.stqa.pft.addressbook.model.GroupData;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ContactHelper extends HelperBase {
 
@@ -51,8 +56,8 @@ public class ContactHelper extends HelperBase {
     wd.switchTo().alert().accept();
   }
 
-  public void editContact() {
-    click(By.xpath("//img[@alt='Edit']"));
+  public void editContact(int count) {
+    click(By.xpath("//table[@id='maintable']/tbody/tr["+count+"]/td[8]/a/img"));
   }
 
   public void submitContectMofification() {
@@ -66,8 +71,21 @@ public class ContactHelper extends HelperBase {
     returnToContacts();
 
   }
-
   public boolean isThereAContact() {
     return isElementPresent(By.name("selected[]"));
+  }
+
+  public List<ContactData> getContactList() {
+    List<ContactData> contacts = new ArrayList<ContactData>() ;
+    List <WebElement> elements = wd.findElements(By.name("entry"));
+    for (WebElement element:elements){
+      List<WebElement> line = element.findElements(By.tagName("td"));
+      int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
+      String firstname=line.get(2).getText();
+      String lastname=line.get(1).getText();
+      ContactData contact=new ContactData(id, firstname, lastname);
+      contacts.add(contact);
+    }
+    return contacts;
   }
 }
