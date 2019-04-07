@@ -66,3 +66,4 @@ addressbook-web-tests/out/test/classes/ru/stqa/pft/addressbook/tests/GroupDeleti
 addressbook-web-tests/out/test/classes/ru/stqa/pft/addressbook/tests/GroupModificationTests.class
 addressbook-web-tests/out/test/classes/ru/stqa/pft/addressbook/tests/TestBase.class
 addressbook-web-tests/tests.uml
+*.log
