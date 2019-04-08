@@ -69,7 +69,7 @@ public class ContactDataGenerator {
     List<ContactData> contacts = new ArrayList<ContactData>();
     for (int i=0;i<count;i++){
       contacts.add(new ContactData().withFirstName(String.format("Name %s",i))
-              .withLastName(String.format("Surname %s",i)).withMobile(String.format("+777777%s",i)).withEmail(String.format("777%s@test.ru",i)));
+              .withLastName(String.format("Surname %s",i)).withMobile(String.format("+777777%s",i)).withEmail(String.format("777%s@test.ru",i)).withHome(String.format("777%s",i)));
     }
     return contacts;
   }

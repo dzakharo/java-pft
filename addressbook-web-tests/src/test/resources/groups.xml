@@ -14,39 +14,4 @@
     <header>header 2</header>
     <footer>footer 2</footer>
   </Group>
-  <Group>
-    <name>tesst 3</name>
-    <header>header 3</header>
-    <footer>footer 3</footer>
-  </Group>
-  <Group>
-    <name>tesst 4</name>
-    <header>header 4</header>
-    <footer>footer 4</footer>
-  </Group>
-  <Group>
-    <name>tesst 5</name>
-    <header>header 5</header>
-    <footer>footer 5</footer>
-  </Group>
-  <Group>
-    <name>tesst 6</name>
-    <header>header 6</header>
-    <footer>footer 6</footer>
-  </Group>
-  <Group>
-    <name>tesst 7</name>
-    <header>header 7</header>
-    <footer>footer 7</footer>
-  </Group>
-  <Group>
-    <name>tesst 8</name>
-    <header>header 8</header>
-    <footer>footer 8</footer>
-  </Group>
-  <Group>
-    <name>tesst 9</name>
-    <header>header 9</header>
-    <footer>footer 9</footer>
-  </Group>
 </list>

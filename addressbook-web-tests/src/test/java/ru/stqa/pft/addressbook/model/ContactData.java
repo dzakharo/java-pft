@@ -8,10 +8,11 @@ import javax.persistence.*;
 import java.io.File;
 import java.util.Objects;
 
-@XStreamAlias("contact")
+@XStreamAlias("Contact")
 @Entity
 @Table(name = "addressbook")
 public class ContactData {
+
   @XStreamOmitField
   @Id
   @Column(name = "id")
@@ -57,12 +58,16 @@ public class ContactData {
   @Transient
   private  String allPhones;
 
-  @Column(name = "photo")
-  @Type(type = "text")
+  @Transient
   private String photo;
 
+
   public File getPhoto() {
-    return new File(photo);
+    if (photo == null) {
+      return null;
+    } else {
+      return new File(photo);
+    }
   }
 
   public ContactData withPhoto(File photo) {
@@ -192,14 +197,25 @@ public class ContactData {
   public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
+
     ContactData that = (ContactData) o;
-    return id == that.id &&
-            Objects.equals(firstname, that.firstname) &&
-            Objects.equals(lastname, that.lastname);
+
+    if (id != that.id) return false;
+    if (firstname != null ? !firstname.equals(that.firstname) : that.firstname != null) return false;
+    if (lastname != null ? !lastname.equals(that.lastname) : that.lastname != null) return false;
+    if (mobile != null ? !mobile.equals(that.mobile) : that.mobile != null) return false;
+    if (home != null ? !home.equals(that.home) : that.home != null) return false;
+    return email != null ? email.equals(that.email) : that.email == null;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, firstname, lastname);
+    int result = id;
+    result = 31 * result + (firstname != null ? firstname.hashCode() : 0);
+    result = 31 * result + (lastname != null ? lastname.hashCode() : 0);
+    result = 31 * result + (mobile != null ? mobile.hashCode() : 0);
+    result = 31 * result + (email != null ? email.hashCode() : 0);
+    result = 31 * result + (home != null ? home.hashCode() : 0);
+    return result;
   }
 }
