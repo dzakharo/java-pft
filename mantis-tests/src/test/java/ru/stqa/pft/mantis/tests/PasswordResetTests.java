@@ -8,6 +8,7 @@ import ru.stqa.pft.mantis.appmanager.HttpSession;
 import ru.stqa.pft.mantis.model.MailMessage;
 import ru.stqa.pft.mantis.model.UserData;
 import ru.stqa.pft.mantis.model.Users;
+import javax.xml.rpc.ServiceException;
 
 import javax.mail.MessagingException;
 import java.io.IOException;
@@ -23,7 +24,8 @@ public class PasswordResetTests extends TestBase {
   }
 
   @Test
-  public void testChangePassword() throws IOException, MessagingException {
+  public void testChangePassword() throws IOException, MessagingException, ServiceException {
+    skipIfNotFixed( 0000001);
     app.getDriver();
     app.session().login("administrator", "root");
     Users listOfUsers  = app.db().users();
